@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom m-4">Register to be a Volunteer</legend>
+            <div class="form-group m-3">
+                {{ form.fullname.label(class="form-control-label") }}
+                {% if form.fullname.errors %}
+                {{ form.fullname(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.fullname.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.fullname(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group m-3">
+                {{ form.email.label(class="form-control-label") }}
+                {% if form.email.errors %}
+                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.email(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group m-3">
+                {{ form.phone.label(class="form-control-label") }}
+                {% if form.phone.errors %}
+                {{ form.phone(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.phone.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.phone(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-check m-3">
+                {{ form.over18(class="form-check-input") }}
+                {{ form.over18.label(class="form-check-label") }}
+            </div>
+            <div class="form-group m-3">
+                {{ form.emergencyname.label(class="form-control-label") }}
+                {% if form.emergencyname.errors %}
+                {{ form.emergencyname(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.emergencyname.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.emergencyname(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group m-3">
+                {{ form.emergencyphone.label(class="form-control-label") }}
+                {% if form.emergencyphone.errors %}
+                {{ form.emergencyphone(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.emergencyphone.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.emergencyphone(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group m-3">
+                {{ form.emergencyemail.label(class="form-control-label") }}
+                {% if form.emergencyemail.errors %}
+                {{ form.emergencyemail(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.emergencyemail.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.emergencyemail(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-check m-3">
+                {{ form.futureeventscontact(class="form-check-input") }}
+                {{ form.futureeventscontact.label(class="form-check-label") }}
+            </div>
+        </fieldset>
+        <div class="form-group m-3">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex h-screen bg-fixed bg-auto bg-repeat"
+    style="background-image: url({{ url_for('static', filename='library.jpg') }});">
+    <div data-aos="zoom-in" class="m-auto">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <br>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message}}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <br>
+                </div>
+            </div>
+        </main>
+        {% endif %}
+        {% endwith %}
+        <h1 class="text-center text-white" style="text-shadow: 4px 4px #000000;">Friends of the Ladera Ranch Library
+        </h1>
+        <br>
+        <p class="text-white text-center" style="text-shadow: 2px 2px #000000;">Friends of the Ladera Ranch Library,
+            founded in the fall of 2003, is a
+            501(c)(3) non-profit organization staffed
+            solely
+            by volunteers.</p>
+        <p class="text-center">
+            <a class="text-white" href="#aboutus">About Us</a> - <a class="text-white" href="#libraryinfo">Library
+                Info</a> - <a class="text-white" href="#beafriend">Be a
+                Friend</a> - <a class="text-white" href="#jointhefriends">Join the Friends</a>
+        </p>
+        <!--<a href="#content">
+                <p class="text-center text-white"><strong>Scroll Down</strong></p>
+            </a>-->
+    </div>
+</div>
+
+<div class="p-4" id="aboutus">
+    <h3 data-aos="zoom-in">Our Mission</h3>
+    <p data-aos="fade-right">Our mission is to form an association of persons interested in books and libraries, to
+        focus attention on
+        library
+        services, facilities, and needs, and to stimulate gifts of books, magazines, desirable collections,
+        endowments, and
+        bequests.</p>
+    <h3 data-aos="zoom-in">More Info</h3>
+    <p data-aos="fade-right">Money raised through the Friends' bookstore, special events and contributions are used
+        exclusively for Ladera
+        Ranch
+        Library collections and projects not funded by the county.<br><br>
+        The Orange County Public Library branch in Ladera Ranch is uniquely situated on the Ladera Ranch School
+        campus. In
+        addition to serving as a public library, during school hours, the children’s library on the ground floor
+        functions as
+        the school library for over 1,600 students in grades K-8.</p>
+    <h5 data-aos="fade-right">Officers</h5>
+    <p data-aos="fade-right"><strong>President:</strong> Indira Polavarapu<br>
+
+        <strong>Vice President/Treasurer:</strong> Annam Balasubramaniam<br>
+
+        <strong>Secretary:</strong> Angelina Barnes
+    </p>
+    <hr id="libraryinfo">
+    <h3 data-aos="zoom-in">Library Info</h3>
+    <p data-aos="fade-right">The Ladera Ranch Branch of the Orange County Public Library is located upstairs in the
+        Administration
+        Building of the
+        Ladera Ranch Elementary and Middle School. This is a unique collaboration between the Capistrano Unified
+        School District
+        and the Orange County Public Library. Our knowledgeable and friendly staff are eager to help you find the
+        information or
+        reading materials you want. Besides our own collection, we can help you access the collections of 32 other
+        libraries in
+        the OC Libraries System. Look for our Business/Careers section, our Parenting section and our Children's and
+        Teens
+        sections. Programs include story times for infants and preschool children.</p>
+    <p data-aos="fade-right"><strong>Address: </strong>29551 Sienna Pkwy
+        Ladera Ranch, CA 92694
+    </p>
+    <p data-aos="fade-right"><strong>Phone: </strong>(949) 234-5940
+    </p>
+    <h5 data-aos="fade-right">Library Hours</h5>
+    <p data-aos="fade-right">
+        <strong>Upstairs:</strong><br>
+        Monday-Thursday, 9:00am-6:00pm<br>
+        Saturday, 9:00am-5:00pm<br>
+
+        <strong>Downstairs:</strong><br>
+        Monday-Thursday, 3:00pm-6:00pm<br>
+        Saturday, 9:00am-5:00pm
+    </p>
+    <a href="https://www.ocpl.org/libraries/ladera-ranch">Click here to view library events</a>
+    <hr id="beafriend">
+    <h3 data-aos="zoom-in">Be a friend</h3>
+    <p data-aos="fade-right">
+        All funds received by the Friends of the Library through memberships, special events and contributions are
+        used
+        exclusively for the many projects the Library undertakes that are not funded by the Orange County Public
+        Library System,
+        e.g. The Summer Reading Program.
+        <br><br>
+        We want to improve and expand upon what our Library offers our community. You can help by becoming a member
+        of the
+        Friends of the Library. Members receive via email Friends' financial and statistical info prior to board
+        meetings,
+        volunteer opportunity, and invitations to attend board meetings; every member has a vote.
+
+    </p>
+    <div data-aos="zoom-in" class="text-center">
+        <p><strong>Be a Friend of the Library</strong><br>Annual Membership: $10<br>Lifetime Membership:
+            $100<br><br><strong>Friends of the Ladera Ranch Library Giving Tree</strong><br>Individuals, businesses
+            or organizations that donate to the Friends of the Ladera Ranch Library
+            are acknowledged with a leaf, appropriately engraved, on the Friends Giving Tree.<br><br><strong>Help
+                our
+                Giving
+                Tree grow</strong><br>Bronze Leaf: $250<br>Silver Leaf: $500<br>Gold Leaf: $1000<br>Platinum Leaf:
+            $2500<br><br><strong><a
+                    href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxmb2xybGZvcm1zfGd4OjViOWY5MjAyNGRlZWNhOWQ">Gift
+                    a Book</a></strong><br><br><strong>To donate, please contact us at <a
+                    href='mailto:LaderaRanchLibrary@gmail.com'>LaderaRanchLibrary@gmail.com</a></strong></p>
+    </div>
+    <hr id="jointhefriends">
+    <h3 data-aos="zoom-in">Join the Friends</h3>
+    <p data-aos="fade-right">Do you have a passion for books or organization? Are you a self-motivated fundraiser?
+        We have many
+        opportunities for you
+        to volunteer a little or a lot. The Friends of the Ladera Ranch Library (FOLRL) welcomes you.<br><br><a
+            href="{{ url_for('volunteer') }}">Click here to become a volunteer</a></p>Email
+    <a href='mailto:LaderaRanchLibrary@gmail.com'>LaderaRanchLibrary@gmail.com</a> if you have questions about
+    volunteering or contributing to the Ladera Ranch Library in any way.
+    </p>
+    <br>
+</div>
+{% endblock %}
